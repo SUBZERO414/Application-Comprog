@@ -48,6 +48,11 @@ public class MySQL {
                     //code to scan database for information(Specifically StudID)
 
                     if(JUser.equals(User) && studentID==ID){
+			/*The If else statements has a condition in the parameter to check if the username and ID matches the data in the passed on 
+			value(Data obtained from the database specifically Name and studID). If there is a match then it will create a String data 
+			type with the data of the user from the database(The values are obtained using the Result set object 'rs' to call the string 
+			data of the stored information in the database, where the numbers represent the column the data is stored in within the database)
+			This string is then passed on to other methods or objects*/
                         String studentData = rs.getString(2) + ", " + rs.getString(1) + ", " + rs.getString(4) + ", " + rs.getString(5) ; 
                         store(studentData);
                         //method call to store the obtained data
