@@ -12,7 +12,12 @@ import java.util.regex.*;
  * @author Luke
  */
 public class Attendance {  
+    /*This method is called in another method or Jframe that gives it a string data which endcodes the given 
+    data(expected to be the student information from the MySQL java class file) in a txt file.
+    The date is set to the current date from the computer and adds it to the name of the txt file for easier identification.
     
+    The method list all the acquired data into a txt file that will be continuesly added provided that it is given data and matches
+    the date of the txt file created, otherwise creates a new one and adds to that one instead*/
     public void attendanceTracker(String attendanceData){
         try{
             String d = new SimpleDateFormat("MMMddyyyy").format(new Date()); 
@@ -32,7 +37,11 @@ public class Attendance {
             System.out.println("Error found: " + e);
         }
     }
-    
+    /*This method is used in conjunction with the attendanceTracker method. The method accepts two String data type in its parameter 
+    to scan for the information in the txt file created by the attendanceTracker (provided that the String day datatype in the parameter matches the date on the file).
+    Using the given String section in the parameter, this method scans for any matching entry in the txt file (hence specifier) and puts it in a new txt file with only 
+    the selected data included in the txt file
+    i.e. String Section = BS201 then only BS201 entries will be added and shown in the newly created txt file in the specified directory/folder*/
     public void loginSpecifier(String Sec, String day){        
         try {
             DateFormat dateFormat = new SimpleDateFormat("MMM/dd/yyyy"); //Eto Sabangan pa update nalang once makuha mo front end
